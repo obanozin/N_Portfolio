@@ -1,55 +1,72 @@
 @import url(https://fonts.googleapis.com/css?family=Amatic+SC);
-body{
+html {
+  height: 100%;
+  font-size: 62.5%;
+  font-family: a-otf-ryumin-pr6n, serif;
+  font-weight: 500;
+  width: 100%;
+}
+body {
   padding: 0;
   margin: 0;
-  }
+}
 /*---メイン画像の枠の大きさを指定---*/
-.main-top{
+.main-top {
   position: relative;
   width: 100%;
   height: 977px;
 }
 /*---メイン画像の配置指定（全て０なので枠全体に画像を表示）---*/
-  .main-top .bgImg {
-    position   : absolute;
-    top        : 0;
-    left       : 0;
-    bottom     : 0;
-    right      : 0;
-    opacity    : 0;
-    animation  : bgAnime 20s infinite;   /* 4画像 × 各5s = 20s  bgAnime = */
-  }
+.main-top .bgImg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  opacity: 0;
+  animation: bgAnime 20s infinite; /* 4画像 × 各5s = 20s  bgAnime = */
+}
 /* --- 段差で背景画像のアニメーションを実行 ----------------- */
-  .main-top .src1 {
-    background-image : url("images/top0.jpg");
-    background-size: cover;
-    background-position: center 22%;   /* 背景の画像を指定 */
-  }
-  .main-top .src2 {
-    background-image : url("images/top1.jpg"); 
-    background-size: cover;
-    background-position: center 22%;  /* 背景の画像を指定 */
-    animation-delay  : 5s;
-  }
-  .main-top .src3 {
-    background-image : url("images/top2.jpg");
-    background-size: cover;
-    background-position: center 22%;   /* 背景の画像を指定 */
-    animation-delay  : 10s;
-  }
-  .main-top .src4 {
-    background-image : url("images/top3.jpg");
-    background-size: cover;
-    background-position: center 22%;   /* 背景の画像を指定 */
-    animation-delay  : 15s;
-  }
+.main-top .src1 {
+  background-image: url("images/top0.jpg");
+  background-size: cover;
+  background-position: center 22%; /* 背景の画像を指定 */
+}
+.main-top .src2 {
+  background-image: url("images/top1.jpg");
+  background-size: cover;
+  background-position: center 22%; /* 背景の画像を指定 */
+  animation-delay: 5s;
+}
+.main-top .src3 {
+  background-image: url("images/top2.jpg");
+  background-size: cover;
+  background-position: center 22%; /* 背景の画像を指定 */
+  animation-delay: 10s;
+}
+.main-top .src4 {
+  background-image: url("images/top3.jpg");
+  background-size: cover;
+  background-position: center 22%; /* 背景の画像を指定 */
+  animation-delay: 15s;
+}
 /*---.bgImgにあるアニメーションプロパティの２０秒中の変化---*/
 @keyframes bgAnime {
-   0% { opacity: 0; }  /*---最初---*/
-   5% { opacity: 1; }  /*---１秒　最初の画像が表示される---*/
-  25% { opacity: 1; }  /*---５秒　まで表示　この後消え始める　　二枚目からはdelayがかかった要素が順々に実行される---*/
-  30% { opacity: 0; }  /*---６秒　ここで１枚目の画像が消える---*/
- 100% { opacity: 0; }  /*---２０秒　処理終了　繰り返しへ---*/
+  0% {
+    opacity: 0;
+  } /*---最初---*/
+  5% {
+    opacity: 1;
+  } /*---１秒　最初の画像が表示される---*/
+  25% {
+    opacity: 1;
+  } /*---５秒　まで表示　この後消え始める　　二枚目からはdelayがかかった要素が順々に実行される---*/
+  30% {
+    opacity: 0;
+  } /*---６秒　ここで１枚目の画像が消える---*/
+  100% {
+    opacity: 0;
+  } /*---２０秒　処理終了　繰り返しへ---*/
 }
 /*---メインタイトル---*/
 .main-title {
@@ -59,7 +76,7 @@ body{
   padding-top: 15px;
   color: white;
   font-size: 117px;
-  font-family: 'Amatic SC', cursive;
+  font-family: "Amatic SC", cursive;
   display: none;
   position: -webkit-sticky;
   position: sticky;
@@ -92,7 +109,7 @@ li {
 .latest-text {
   font-family: garamond-premier-pro-display, serif;
   font-size: 3.2rem;
-  font-weight: 250;
+  font-weight: 500;
   text-transform: uppercase;
   letter-spacing: 3.7px;
   margin-left: 5px;
@@ -100,7 +117,7 @@ li {
 .latest-sub {
   font-size: 1.2rem;
   font-family: a-otf-ryumin-pr6n, serif;
-  color: rgba(125, 125, 125,0.9);
+  color: rgba(125, 125, 125, 0.9);
   letter-spacing: 0.06em;
   display: block;
   position: relative;
@@ -112,6 +129,7 @@ li {
   height: 100%;
 }
 .latest-left {
+  position: absolute;
   width: 46.6%;
   padding-right: 3.3%;
   border-right: 1px solid rgb(238, 238, 238);
@@ -119,14 +137,41 @@ li {
 .first-pic {
   background-image: url("images/top3.jpg");
   height: 350px;
-  width:90%;
+  width: 90%;
   background-size: cover;
 }
-.latest-right {
-  width: 50%;
+.first-pic:hover {
+	transform: scale(1.1, 1.1);
 }
 .latest-post {
   display: flex;
   flex-wrap: wrap;
   justify-content: left;
+}
+.post-content {
+  margin-top: 25px;
+}
+.date {
+  font-size: 1.2rem;
+  font-family: a-otf-ryumin-pr6n, serif;
+  color: rgba(125, 125, 125, 0.9);
+  display: block;
+  position: relative;
+  margin-top: 8px;
+  margin-left: -1px;
+  letter-spacing: 1.7px;
+}
+.title {
+  margin-top: 10px;
+}
+.latest-link {
+  text-decoration: none;
+  color: black;
+  font-size: 2.05rem;
+}
+/*---latest右---*/
+.latest-right {
+  width: 50%;
+  position: absolute;
+  right: 0;
 }

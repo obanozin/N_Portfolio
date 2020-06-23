@@ -1,6 +1,3 @@
-
-$(function(){
-    $('.main-title').fadeIn(2000);
+$(function () {
+  $(".main-title").fadeIn(2000);
 });
-
-
